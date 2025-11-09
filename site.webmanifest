@@ -1,6 +1,7 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Calendarity",
+  "short_name": "Calendarity",
+  "description": "Современное мобильное приложение для управления календарем и планирования",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +16,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#667eea",
   "background_color": "#ffffff",
   "display": "standalone"
 }
