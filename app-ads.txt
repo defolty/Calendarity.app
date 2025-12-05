@@ -1,0 +1,4 @@
+# app-ads.txt file for Calendarity
+# Add your ad network entries below
+# Format: domain.com, publisher-id, RELATIONSHIP, certification-authority-id
+
