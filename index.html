@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calendarity - современное мобильное приложение для управления календарем и планирования">
-    <title>Calendarity - Управление временем стало проще</title>
+    <meta name="description" content="Calendarity - modern mobile app for calendar management and planning">
+    <title>Calendarity - Time Management Made Simple</title>
 
-    <!-- Favicon для разных браузеров и устройств -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
@@ -28,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Анимированный градиентный фон */
         .animated-gradient-bg {
             background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
             background-size: 400% 400%;
@@ -43,7 +42,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Плавающие круги на фоне */
         .floating-shape {
             position: absolute;
             border-radius: 50%;
@@ -82,7 +80,6 @@
             66% { transform: translateY(30px) rotate(240deg); }
         }
 
-        /* Glassmorphism эффект */
         .glass {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
@@ -97,7 +94,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
         }
 
-        /* Анимация появления */
         .fade-in {
             animation: fadeIn 1s ease-in;
         }
@@ -111,10 +107,7 @@
         .fade-in-delay-2 { animation-delay: 0.4s; animation-fill-mode: both; }
         .fade-in-delay-3 { animation-delay: 0.6s; animation-fill-mode: both; }
         .fade-in-delay-4 { animation-delay: 0.8s; animation-fill-mode: both; }
-        .fade-in-delay-5 { animation-delay: 1s; animation-fill-mode: both; }
-        .fade-in-delay-6 { animation-delay: 1.2s; animation-fill-mode: both; }
 
-        /* Карточки с эффектом hover */
         .feature-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -141,7 +134,6 @@
             box-shadow: 0 20px 60px rgba(118, 75, 162, 0.3);
         }
 
-        /* Пульсирующая анимация для иконок */
         .pulse-icon {
             animation: pulse 2s infinite;
         }
@@ -151,7 +143,6 @@
             50% { transform: scale(1.05); }
         }
 
-        /* Кнопки с glassmorphism */
         .glass-button {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
@@ -166,14 +157,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        /* Навигация с эффектом стекла */
         .glass-nav {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Анимация для phone mockup */
         .phone-float {
             animation: phoneFloat 3s ease-in-out infinite;
         }
@@ -183,93 +172,185 @@
             50% { transform: translateY(-20px); }
         }
 
-        /* Светящийся эффект */
         .glow {
             box-shadow: 0 0 20px rgba(102, 126, 234, 0.4),
                         0 0 40px rgba(102, 126, 234, 0.2);
         }
+
+        /* Language switcher */
+        .lang-btn {
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: linear-gradient(to right, #9333ea, #db2777);
+            color: white;
+        }
+        .lang-btn:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+            color: #6b7280;
+        }
+
+        /* Screenshot slider */
+        .screenshot-slider {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .screenshot-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .screenshot-slide {
+            display: none;
+            width: 100%;
+        }
+        .screenshot-slide.active {
+            display: block;
+        }
+        .screenshot-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .slider-arrow:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+        .slider-arrow.prev { left: -50px; }
+        .slider-arrow.next { right: -50px; }
+        .slider-arrow svg {
+            width: 20px;
+            height: 20px;
+            color: #6b7280;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
-    <!-- Навигация -->
+    <!-- Navigation -->
     <nav class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <span class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Calendarity</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#features" class="text-gray-700 hover:text-purple-600 transition font-medium">Возможности</a>
-                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium">О приложении</a>
-                    <a href="#download" class="text-gray-700 hover:text-purple-600 transition font-medium">Скачать</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Features" data-ru="Возможности">Features</a>
+                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="About" data-ru="О приложении">About</a>
+                    <a href="#download" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Download" data-ru="Скачать">Download</a>
+                    <!-- Language Switcher -->
+                    <div class="flex rounded-lg overflow-hidden border border-gray-200">
+                        <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en">EN</button>
+                        <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru">RU</button>
+                    </div>
+                </div>
+                <!-- Mobile Language Switcher -->
+                <div class="md:hidden flex rounded-lg overflow-hidden border border-gray-200">
+                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en-mobile">EN</button>
+                    <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru-mobile">RU</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Герой секция -->
+    <!-- Hero Section -->
     <section class="animated-gradient-bg text-white pt-32 pb-20 px-4 relative min-h-screen flex items-center">
-        <!-- Плавающие фигуры -->
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
         <div class="floating-shape shape-3"></div>
 
         <div class="max-w-7xl mx-auto text-center relative z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-in">
-                Управление временем<br>стало проще
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-in" data-en="Time Management<br>Made Simple" data-ru="Управление временем<br>стало проще">
+                Time Management<br>Made Simple
             </h1>
-            <p class="text-xl md:text-2xl mb-12 text-white opacity-90 max-w-3xl mx-auto fade-in fade-in-delay-1">
-                Calendarity - современное мобильное приложение для эффективного планирования вашего времени
+            <p class="text-xl md:text-2xl mb-12 text-white opacity-90 max-w-3xl mx-auto fade-in fade-in-delay-1" data-en="Calendarity - a modern mobile app for effective time planning" data-ru="Calendarity - современное мобильное приложение для эффективного планирования вашего времени">
+                Calendarity - a modern mobile app for effective time planning
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in fade-in-delay-2">
-                <a href="#download" class="glass-dark text-purple-600 px-8 py-4 rounded-2xl font-semibold transition-all hover:scale-105">
-                    Скачать приложение
+                <a href="#download" class="glass-dark text-purple-600 px-8 py-4 rounded-2xl font-semibold transition-all hover:scale-105" data-en="Download App" data-ru="Скачать приложение">
+                    Download App
                 </a>
-                <a href="#features" class="glass-button text-white px-8 py-4 rounded-2xl font-semibold">
-                    Узнать больше
+                <a href="#features" class="glass-button text-white px-8 py-4 rounded-2xl font-semibold" data-en="Learn More" data-ru="Узнать больше">
+                    Learn More
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Возможности -->
+    <!-- Features -->
     <section id="features" class="py-20 px-4 relative">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Возможности приложения</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Все необходимые инструменты для продуктивного планирования
+                <h2 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4" data-en="App Features" data-ru="Возможности приложения">App Features</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-en="All the tools you need for productive planning" data-ru="Все необходимые инструменты для продуктивного планирования">
+                    All the tools you need for productive planning
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Карточка 1 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
                 <div class="feature-card glass-dark p-8 rounded-3xl fade-in fade-in-delay-1">
                     <div class="w-20 h-20 glass rounded-2xl flex items-center justify-center mb-6 pulse-icon glow">
                         <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Умный календарь</h3>
-                    <p class="text-gray-600">
-                        Интуитивный интерфейс для планирования событий на день, неделю и месяц
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900" data-en="Smart Calendar" data-ru="Умный календарь">Smart Calendar</h3>
+                    <p class="text-gray-600" data-en="Intuitive interface for planning events by day, week, and month" data-ru="Интуитивный интерфейс для планирования событий на день, неделю и месяц">
+                        Intuitive interface for planning events by day, week, and month
                     </p>
                 </div>
 
-                <!-- Карточка 2 -->
+                <!-- Card 2 -->
                 <div class="feature-card glass-dark p-8 rounded-3xl fade-in fade-in-delay-2">
                     <div class="w-20 h-20 glass rounded-2xl flex items-center justify-center mb-6 pulse-icon glow">
                         <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Аналитика</h3>
-                    <p class="text-gray-600">
-                        Отслеживайте свою продуктивность и анализируйте использование времени
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900" data-en="Analytics" data-ru="Аналитика">Analytics</h3>
+                    <p class="text-gray-600" data-en="Track your productivity and analyze time usage" data-ru="Отслеживайте свою продуктивность и анализируйте использование времени">
+                        Track your productivity and analyze time usage
                     </p>
                 </div>
 
-                <!-- Карточка 3 -->
+                <!-- Card 3 -->
                 <div class="feature-card glass-dark p-8 rounded-3xl fade-in fade-in-delay-3">
                     <div class="w-20 h-20 glass rounded-2xl flex items-center justify-center mb-6 pulse-icon glow">
                         <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -277,29 +358,29 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Статистика</h3>
-                    <p class="text-gray-600">
-                        Визуальные отчёты и графики для анализа вашего расписания
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900" data-en="Statistics" data-ru="Статистика">Statistics</h3>
+                    <p class="text-gray-600" data-en="Visual reports and charts for schedule analysis" data-ru="Визуальные отчёты и графики для анализа вашего расписания">
+                        Visual reports and charts for schedule analysis
                     </p>
                 </div>
 
-                <!-- Карточка 4 -->
+                <!-- Card 4 -->
                 <div class="feature-card glass-dark p-8 rounded-3xl fade-in fade-in-delay-4">
                     <div class="w-20 h-20 glass rounded-2xl flex items-center justify-center mb-6 pulse-icon glow">
                         <svg class="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-900">Конфиденциальность</h3>
-                    <p class="text-gray-600">
-                        Ваши данные защищены современными методами шифрования
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900" data-en="Privacy" data-ru="Конфиденциальность">Privacy</h3>
+                    <p class="text-gray-600" data-en="Your data is protected with modern encryption" data-ru="Ваши данные защищены современными методами шифрования">
+                        Your data is protected with modern encryption
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- О приложении -->
+    <!-- About -->
     <section id="about" class="py-20 px-4 animated-gradient-bg text-white relative overflow-hidden">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
@@ -307,56 +388,86 @@
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="glass p-10 rounded-3xl">
-                    <h2 class="text-5xl font-bold mb-6">
-                        Планируйте эффективно
+                    <h2 class="text-5xl font-bold mb-6" data-en="Plan Effectively" data-ru="Планируйте эффективно">
+                        Plan Effectively
                     </h2>
-                    <p class="text-lg text-white opacity-90 mb-6">
-                        Calendarity - это больше, чем просто календарь. Это ваш личный помощник в управлении временем, который помогает организовать день, неделю и месяц наиболее продуктивным образом.
+                    <p class="text-lg text-white opacity-90 mb-6" data-en="Calendarity is more than just a calendar. It's your personal time management assistant that helps organize your day, week, and month in the most productive way." data-ru="Calendarity - это больше, чем просто календарь. Это ваш личный помощник в управлении временем, который помогает организовать день, неделю и месяц наиболее продуктивным образом.">
+                        Calendarity is more than just a calendar. It's your personal time management assistant that helps organize your day, week, and month in the most productive way.
                     </p>
-                    <p class="text-lg text-white opacity-90 mb-6">
-                        Приложение разработано с учетом современных принципов UX/UI дизайна и предлагает интуитивный интерфейс, который делает планирование простым и приятным.
+                    <p class="text-lg text-white opacity-90 mb-6" data-en="The app is designed with modern UX/UI principles and offers an intuitive interface that makes planning simple and enjoyable." data-ru="Приложение разработано с учетом современных принципов UX/UI дизайна и предлагает интуитивный интерфейс, который делает планирование простым и приятным.">
+                        The app is designed with modern UX/UI principles and offers an intuitive interface that makes planning simple and enjoyable.
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-center text-white">
                             <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
-                            Простой и понятный интерфейс
+                            <span data-en="Simple and intuitive interface" data-ru="Простой и понятный интерфейс">Simple and intuitive interface</span>
                         </li>
                         <li class="flex items-center text-white">
                             <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
-                            Оптимизировано для iOS
+                            <span data-en="Optimized for iOS" data-ru="Оптимизировано для iOS">Optimized for iOS</span>
                         </li>
                         <li class="flex items-center text-white">
                             <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                             </svg>
-                            Регулярные обновления и новые функции
+                            <span data-en="Regular updates and new features" data-ru="Регулярные обновления и новые функции">Regular updates and new features</span>
                         </li>
                     </ul>
                 </div>
-                <div class="glass rounded-3xl h-96 flex items-center justify-center phone-float p-8">
-                    <div class="text-white text-center">
-                        <svg class="w-40 h-40 mx-auto mb-4 pulse-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+
+                <!-- Screenshot Slider -->
+                <div class="screenshot-slider phone-float">
+                    <button class="slider-arrow prev" onclick="prevSlide()">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                         </svg>
-                        <p class="text-2xl font-bold">Скриншот приложения</p>
+                    </button>
+                    <div class="screenshot-container">
+                        <div class="screenshot-slide active">
+                            <img src="screenshots/screenshot-1.png" alt="App Screenshot 1">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="screenshots/screenshot-2.png" alt="App Screenshot 2">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="screenshots/screenshot-3.png" alt="App Screenshot 3">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="screenshots/screenshot-4.png" alt="App Screenshot 4">
+                        </div>
+                        <div class="screenshot-slide">
+                            <img src="screenshots/screenshot-5.png" alt="App Screenshot 5">
+                        </div>
+                    </div>
+                    <button class="slider-arrow next" onclick="nextSlide()">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="slider-dot active" onclick="goToSlide(0)"></span>
+                        <span class="slider-dot" onclick="goToSlide(1)"></span>
+                        <span class="slider-dot" onclick="goToSlide(2)"></span>
+                        <span class="slider-dot" onclick="goToSlide(3)"></span>
+                        <span class="slider-dot" onclick="goToSlide(4)"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Скачать -->
+    <!-- Download -->
     <section id="download" class="py-20 px-4">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
-                Начните использовать Calendarity сегодня
+            <h2 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6" data-en="Start Using Calendarity Today" data-ru="Начните использовать Calendarity сегодня">
+                Start Using Calendarity Today
             </h2>
-            <p class="text-xl text-gray-600 mb-12">
-                Доступно для iOS
+            <p class="text-xl text-gray-600 mb-12" data-en="Available for iOS" data-ru="Доступно для iOS">
+                Available for iOS
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
                 <a href="#" class="glass-dark hover:scale-105 transition-transform px-8 py-6 rounded-2xl font-semibold flex items-center justify-center group">
@@ -364,7 +475,7 @@
                         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                     </svg>
                     <div class="text-left">
-                        <div class="text-xs text-gray-600">Загрузить в</div>
+                        <div class="text-xs text-gray-600" data-en="Download on the" data-ru="Загрузить в">Download on the</div>
                         <div class="text-xl font-bold text-gray-900">App Store</div>
                     </div>
                 </a>
@@ -372,43 +483,109 @@
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Footer -->
     <footer class="bg-gradient-to-r from-gray-900 to-purple-900 text-white py-12 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Calendarity</h3>
-                    <p class="text-gray-300">
-                        Современное приложение для управления временем
+                    <p class="text-gray-300" data-en="Modern time management app" data-ru="Современное приложение для управления временем">
+                        Modern time management app
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4 text-lg">Продукт</h4>
+                    <h4 class="font-semibold mb-4 text-lg" data-en="Product" data-ru="Продукт">Product</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#features" class="hover:text-purple-400 transition">Возможности</a></li>
-                        <li><a href="#about" class="hover:text-purple-400 transition">О приложении</a></li>
-                        <li><a href="#download" class="hover:text-purple-400 transition">Скачать</a></li>
+                        <li><a href="#features" class="hover:text-purple-400 transition" data-en="Features" data-ru="Возможности">Features</a></li>
+                        <li><a href="#about" class="hover:text-purple-400 transition" data-en="About" data-ru="О приложении">About</a></li>
+                        <li><a href="#download" class="hover:text-purple-400 transition" data-en="Download" data-ru="Скачать">Download</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4 text-lg">Поддержка</h4>
+                    <h4 class="font-semibold mb-4 text-lg" data-en="Support" data-ru="Поддержка">Support</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="mailto:support@calendarity.app" class="hover:text-purple-400 transition">Связаться с нами</a></li>
+                        <li><a href="mailto:support@calendarity.app" class="hover:text-purple-400 transition" data-en="Contact Us" data-ru="Связаться с нами">Contact Us</a></li>
                         <li><a href="#" class="hover:text-purple-400 transition">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4 text-lg">Юридическая информация</h4>
+                    <h4 class="font-semibold mb-4 text-lg" data-en="Legal" data-ru="Юридическая информация">Legal</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="privacy.html" class="hover:text-purple-400 transition">Политика конфиденциальности</a></li>
-                        <li><a href="terms.html" class="hover:text-purple-400 transition">Пользовательское соглашение</a></li>
+                        <li><a href="privacy.html" class="hover:text-purple-400 transition" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-purple-400 transition" data-en="Terms of Service" data-ru="Пользовательское соглашение">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-gray-300">
-                <p>&copy; 2025 Calendarity. Все права защищены.</p>
+                <p data-en="&copy; 2025 Calendarity. All rights reserved." data-ru="&copy; 2025 Calendarity. Все права защищены.">&copy; 2025 Calendarity. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Screenshot Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.screenshot-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance slider
+        setInterval(nextSlide, 4000);
+
+        // Language Switcher
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+
+            // Update buttons
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('lang-en-mobile').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru-mobile').classList.toggle('active', lang === 'ru');
+
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.innerHTML = text;
+                    }
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+        });
+    </script>
 </body>
 </html>

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Пользовательское соглашение Calendarity">
-    <title>Пользовательское соглашение - Calendarity</title>
+    <meta name="description" content="Terms of Service - Calendarity">
+    <title>Terms of Service - Calendarity</title>
 
-    <!-- Favicon для разных браузеров и устройств -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
@@ -16,290 +15,272 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Glassmorphism эффект */
+        body { font-family: 'Inter', sans-serif; }
         .glass-nav {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .glass-content {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
         }
-
         .fade-in {
             animation: fadeIn 0.8s ease-in;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .lang-btn { transition: all 0.3s ease; }
+        .lang-btn.active {
+            background: linear-gradient(to right, #9333ea, #db2777);
+            color: white;
+        }
+        .lang-btn:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+            color: #6b7280;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
-    <!-- Навигация -->
     <nav class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Calendarity</a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition font-medium">Главная</a>
-                    <a href="privacy.html" class="text-gray-700 hover:text-purple-600 transition font-medium">Конфиденциальность</a>
-                    <a href="terms.html" class="text-purple-600 font-bold">Соглашение</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Home" data-ru="Главная">Home</a>
+                    <a href="privacy.html" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Privacy" data-ru="Конфиденциальность">Privacy</a>
+                    <a href="terms.html" class="text-purple-600 font-bold" data-en="Terms" data-ru="Соглашение">Terms</a>
+                    <div class="flex rounded-lg overflow-hidden border border-gray-200">
+                        <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en">EN</button>
+                        <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru">RU</button>
+                    </div>
+                </div>
+                <div class="md:hidden flex rounded-lg overflow-hidden border border-gray-200">
+                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en-mobile">EN</button>
+                    <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru-mobile">RU</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Контент -->
     <div class="max-w-4xl mx-auto px-4 py-12 pt-24">
         <div class="glass-content rounded-3xl shadow-2xl p-8 md:p-12 fade-in">
-            <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Пользовательское соглашение</h1>
-            <p class="text-gray-600 mb-8">Последнее обновление: 8 ноября 2025 года</p>
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4" data-en="Terms of Service" data-ru="Пользовательское соглашение">Terms of Service</h1>
+            <p class="text-gray-600 mb-8" data-en="Last updated: November 8, 2025" data-ru="Последнее обновление: 8 ноября 2025 года">Last updated: November 8, 2025</p>
 
             <div class="prose prose-lg max-w-none">
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Принятие условий</h2>
-                    <p class="text-gray-700 mb-4">
-                        Добро пожаловать в Calendarity. Настоящее Пользовательское соглашение ("Соглашение") регулирует
-                        ваше использование мобильного приложения Calendarity ("Приложение", "Сервис") и связанных с ним услуг.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="1. Acceptance of Terms" data-ru="1. Принятие условий">1. Acceptance of Terms</h2>
+                    <p class="text-gray-700 mb-4" data-en="Welcome to Calendarity. This Terms of Service Agreement ('Agreement') governs your use of the Calendarity mobile application ('App', 'Service') and related services." data-ru="Добро пожаловать в Calendarity. Настоящее Пользовательское соглашение ('Соглашение') регулирует ваше использование мобильного приложения Calendarity ('Приложение', 'Сервис') и связанных с ним услуг.">
+                        Welcome to Calendarity. This Terms of Service Agreement ("Agreement") governs your use of the Calendarity mobile application ("App", "Service") and related services.
                     </p>
-                    <p class="text-gray-700">
-                        Используя наше Приложение, вы подтверждаете, что прочитали, поняли и согласны соблюдать
-                        настоящее Соглашение. Если вы не согласны с какими-либо условиями, пожалуйста, не используйте
-                        наше Приложение.
+                    <p class="text-gray-700" data-en="By using our App, you confirm that you have read, understood, and agree to comply with this Agreement. If you do not agree with any terms, please do not use our App." data-ru="Используя наше Приложение, вы подтверждаете, что прочитали, поняли и согласны соблюдать настоящее Соглашение. Если вы не согласны с какими-либо условиями, пожалуйста, не используйте наше Приложение.">
+                        By using our App, you confirm that you have read, understood, and agree to comply with this Agreement. If you do not agree with any terms, please do not use our App.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">2. Описание сервиса</h2>
-                    <p class="text-gray-700 mb-4">
-                        Calendarity - это мобильное приложение для управления календарем, планирования событий,
-                        создания напоминаний и организации задач. Сервис предоставляет:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="2. Service Description" data-ru="2. Описание сервиса">2. Service Description</h2>
+                    <p class="text-gray-700 mb-4" data-en="Calendarity is a mobile application for calendar management, event planning, creating reminders, and organizing tasks. The service provides:" data-ru="Calendarity - это мобильное приложение для управления календарем, планирования событий, создания напоминаний и организации задач. Сервис предоставляет:">
+                        Calendarity is a mobile application for calendar management, event planning, creating reminders, and organizing tasks. The service provides:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Функции календаря и планирования событий</li>
-                        <li>Систему управления задачами</li>
-                        <li>Настраиваемые уведомления и напоминания</li>
-                        <li>Синхронизацию данных между устройствами</li>
-                        <li>Аналитику использования времени</li>
-                        <li>Другие связанные функции</li>
+                        <li data-en="Calendar and event planning features" data-ru="Функции календаря и планирования событий">Calendar and event planning features</li>
+                        <li data-en="Task management system" data-ru="Систему управления задачами">Task management system</li>
+                        <li data-en="Customizable notifications and reminders" data-ru="Настраиваемые уведомления и напоминания">Customizable notifications and reminders</li>
+                        <li data-en="Data synchronization across devices" data-ru="Синхронизацию данных между устройствами">Data synchronization across devices</li>
+                        <li data-en="Time usage analytics" data-ru="Аналитику использования времени">Time usage analytics</li>
+                        <li data-en="Other related features" data-ru="Другие связанные функции">Other related features</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. Учетная запись пользователя</h2>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="3. User Account" data-ru="3. Учетная запись пользователя">3. User Account</h2>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">3.1. Регистрация</h3>
-                    <p class="text-gray-700 mb-4">
-                        Для использования определенных функций Приложения вам может потребоваться создать учетную запись.
-                        При регистрации вы обязуетесь:
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="3.1. Registration" data-ru="3.1. Регистрация">3.1. Registration</h3>
+                    <p class="text-gray-700 mb-4" data-en="To use certain features of the App, you may need to create an account. When registering, you agree to:" data-ru="Для использования определенных функций Приложения вам может потребоваться создать учетную запись. При регистрации вы обязуетесь:">
+                        To use certain features of the App, you may need to create an account. When registering, you agree to:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                        <li>Предоставить точную, полную и актуальную информацию</li>
-                        <li>Поддерживать безопасность вашего пароля</li>
-                        <li>Своевременно обновлять информацию учетной записи</li>
-                        <li>Нести ответственность за все действия в вашей учетной записи</li>
-                        <li>Немедленно уведомить нас о несанкционированном использовании</li>
+                        <li data-en="Provide accurate, complete, and current information" data-ru="Предоставить точную, полную и актуальную информацию">Provide accurate, complete, and current information</li>
+                        <li data-en="Maintain the security of your password" data-ru="Поддерживать безопасность вашего пароля">Maintain the security of your password</li>
+                        <li data-en="Promptly update account information" data-ru="Своевременно обновлять информацию учетной записи">Promptly update account information</li>
+                        <li data-en="Be responsible for all activities in your account" data-ru="Нести ответственность за все действия в вашей учетной записи">Be responsible for all activities in your account</li>
+                        <li data-en="Immediately notify us of unauthorized use" data-ru="Немедленно уведомить нас о несанкционированном использовании">Immediately notify us of unauthorized use</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">3.2. Возрастные ограничения</h3>
-                    <p class="text-gray-700">
-                        Вы должны быть не моложе 13 лет для использования нашего Приложения. Используя Приложение,
-                        вы подтверждаете, что соответствуете этому возрастному требованию.
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="3.2. Age Restrictions" data-ru="3.2. Возрастные ограничения">3.2. Age Restrictions</h3>
+                    <p class="text-gray-700" data-en="You must be at least 13 years old to use our App. By using the App, you confirm that you meet this age requirement." data-ru="Вы должны быть не моложе 13 лет для использования нашего Приложения. Используя Приложение, вы подтверждаете, что соответствуете этому возрастному требованию.">
+                        You must be at least 13 years old to use our App. By using the App, you confirm that you meet this age requirement.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">4. Правила использования</h2>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="4. Usage Rules" data-ru="4. Правила использования">4. Usage Rules</h2>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">4.1. Разрешенное использование</h3>
-                    <p class="text-gray-700 mb-4">Вы можете использовать Приложение для личных и законных целей.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="4.1. Permitted Use" data-ru="4.1. Разрешенное использование">4.1. Permitted Use</h3>
+                    <p class="text-gray-700 mb-4" data-en="You may use the App for personal and lawful purposes." data-ru="Вы можете использовать Приложение для личных и законных целей.">You may use the App for personal and lawful purposes.</p>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">4.2. Запрещенные действия</h3>
-                    <p class="text-gray-700 mb-3">При использовании Приложения запрещается:</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="4.2. Prohibited Actions" data-ru="4.2. Запрещенные действия">4.2. Prohibited Actions</h3>
+                    <p class="text-gray-700 mb-3" data-en="When using the App, you are prohibited from:" data-ru="При использовании Приложения запрещается:">When using the App, you are prohibited from:</p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Нарушать законы или права третьих лиц</li>
-                        <li>Распространять вредоносное программное обеспечение</li>
-                        <li>Пытаться получить несанкционированный доступ к системам</li>
-                        <li>Использовать автоматизированные средства для доступа к Сервису</li>
-                        <li>Создавать учетные записи автоматизированными методами</li>
-                        <li>Вмешиваться в работу Приложения или нагружать серверы</li>
-                        <li>Копировать, модифицировать или создавать производные работы</li>
-                        <li>Проводить реверс-инжиниринг Приложения</li>
-                        <li>Удалять уведомления об авторских правах</li>
-                        <li>Использовать Приложение для спама или мошенничества</li>
+                        <li data-en="Violating laws or third-party rights" data-ru="Нарушать законы или права третьих лиц">Violating laws or third-party rights</li>
+                        <li data-en="Distributing malicious software" data-ru="Распространять вредоносное программное обеспечение">Distributing malicious software</li>
+                        <li data-en="Attempting to gain unauthorized access to systems" data-ru="Пытаться получить несанкционированный доступ к системам">Attempting to gain unauthorized access to systems</li>
+                        <li data-en="Using automated means to access the Service" data-ru="Использовать автоматизированные средства для доступа к Сервису">Using automated means to access the Service</li>
+                        <li data-en="Creating accounts through automated methods" data-ru="Создавать учетные записи автоматизированными методами">Creating accounts through automated methods</li>
+                        <li data-en="Interfering with App operation or overloading servers" data-ru="Вмешиваться в работу Приложения или нагружать серверы">Interfering with App operation or overloading servers</li>
+                        <li data-en="Copying, modifying, or creating derivative works" data-ru="Копировать, модифицировать или создавать производные работы">Copying, modifying, or creating derivative works</li>
+                        <li data-en="Reverse engineering the App" data-ru="Проводить реверс-инжиниринг Приложения">Reverse engineering the App</li>
+                        <li data-en="Removing copyright notices" data-ru="Удалять уведомления об авторских правах">Removing copyright notices</li>
+                        <li data-en="Using the App for spam or fraud" data-ru="Использовать Приложение для спама или мошенничества">Using the App for spam or fraud</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">5. Интеллектуальная собственность</h2>
-                    <p class="text-gray-700 mb-4">
-                        Все права на Приложение, включая, но не ограничиваясь, программное обеспечение, дизайн,
-                        текст, графику, логотипы и другие материалы, принадлежат нам или нашим лицензиарам и
-                        защищены законами об авторском праве и другими законами об интеллектуальной собственности.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="5. Intellectual Property" data-ru="5. Интеллектуальная собственность">5. Intellectual Property</h2>
+                    <p class="text-gray-700 mb-4" data-en="All rights to the App, including but not limited to software, design, text, graphics, logos, and other materials, belong to us or our licensors and are protected by copyright and other intellectual property laws." data-ru="Все права на Приложение, включая, но не ограничиваясь, программное обеспечение, дизайн, текст, графику, логотипы и другие материалы, принадлежат нам или нашим лицензиарам и защищены законами об авторском праве и другими законами об интеллектуальной собственности.">
+                        All rights to the App, including but not limited to software, design, text, graphics, logos, and other materials, belong to us or our licensors and are protected by copyright and other intellectual property laws.
                     </p>
-                    <p class="text-gray-700">
-                        Ваш контент (события, заметки, задачи) остается вашей собственностью. Используя Приложение,
-                        вы предоставляете нам ограниченную лицензию на использование вашего контента для
-                        предоставления и улучшения Сервиса.
+                    <p class="text-gray-700" data-en="Your content (events, notes, tasks) remains your property. By using the App, you grant us a limited license to use your content to provide and improve the Service." data-ru="Ваш контент (события, заметки, задачи) остается вашей собственностью. Используя Приложение, вы предоставляете нам ограниченную лицензию на использование вашего контента для предоставления и улучшения Сервиса.">
+                        Your content (events, notes, tasks) remains your property. By using the App, you grant us a limited license to use your content to provide and improve the Service.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">6. Подписки и платежи</h2>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="6. Subscriptions and Payments" data-ru="6. Подписки и платежи">6. Subscriptions and Payments</h2>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">6.1. Бесплатная версия</h3>
-                    <p class="text-gray-700 mb-4">
-                        Базовая версия Приложения доступна бесплатно с ограниченным набором функций.
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="6.1. Free Version" data-ru="6.1. Бесплатная версия">6.1. Free Version</h3>
+                    <p class="text-gray-700 mb-4" data-en="The basic version of the App is available for free with a limited set of features." data-ru="Базовая версия Приложения доступна бесплатно с ограниченным набором функций.">
+                        The basic version of the App is available for free with a limited set of features.
                     </p>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">6.2. Премиум подписка</h3>
-                    <p class="text-gray-700 mb-3">
-                        Премиум версия предоставляет доступ к дополнительным функциям за плату. При оформлении подписки:
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="6.2. Premium Subscription" data-ru="6.2. Премиум подписка">6.2. Premium Subscription</h3>
+                    <p class="text-gray-700 mb-3" data-en="The premium version provides access to additional features for a fee. When subscribing:" data-ru="Премиум версия предоставляет доступ к дополнительным функциям за плату. При оформлении подписки:">
+                        The premium version provides access to additional features for a fee. When subscribing:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Оплата взимается через выбранный платежный метод</li>
-                        <li>Подписка автоматически продлевается, если не отменена</li>
-                        <li>Вы можете отменить подписку в любое время</li>
-                        <li>Возврат средств осуществляется в соответствии с нашей политикой возврата</li>
-                        <li>Цены могут изменяться с предварительным уведомлением</li>
+                        <li data-en="Payment is charged through the selected payment method" data-ru="Оплата взимается через выбранный платежный метод">Payment is charged through the selected payment method</li>
+                        <li data-en="Subscription automatically renews unless canceled" data-ru="Подписка автоматически продлевается, если не отменена">Subscription automatically renews unless canceled</li>
+                        <li data-en="You can cancel your subscription at any time" data-ru="Вы можете отменить подписку в любое время">You can cancel your subscription at any time</li>
+                        <li data-en="Refunds are processed according to our refund policy" data-ru="Возврат средств осуществляется в соответствии с нашей политикой возврата">Refunds are processed according to our refund policy</li>
+                        <li data-en="Prices may change with prior notice" data-ru="Цены могут изменяться с предварительным уведомлением">Prices may change with prior notice</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">7. Конфиденциальность</h2>
-                    <p class="text-gray-700">
-                        Использование Приложения также регулируется нашей
-                        <a href="privacy.html" class="text-purple-600 hover:underline">Политикой конфиденциальности</a>,
-                        которая описывает, как мы собираем, используем и защищаем вашу информацию. Пожалуйста,
-                        ознакомьтесь с ней внимательно.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="7. Privacy" data-ru="7. Конфиденциальность">7. Privacy</h2>
+                    <p class="text-gray-700" data-en="Use of the App is also governed by our Privacy Policy, which describes how we collect, use, and protect your information. Please review it carefully." data-ru="Использование Приложения также регулируется нашей Политикой конфиденциальности, которая описывает, как мы собираем, используем и защищаем вашу информацию. Пожалуйста, ознакомьтесь с ней внимательно.">
+                        Use of the App is also governed by our <a href="privacy.html" class="text-purple-600 hover:underline">Privacy Policy</a>, which describes how we collect, use, and protect your information. Please review it carefully.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">8. Отказ от гарантий</h2>
-                    <p class="text-gray-700 mb-4">
-                        Приложение предоставляется "как есть" и "как доступно" без каких-либо гарантий, явных или
-                        подразумеваемых. Мы не гарантируем, что:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="8. Disclaimer of Warranties" data-ru="8. Отказ от гарантий">8. Disclaimer of Warranties</h2>
+                    <p class="text-gray-700 mb-4" data-en="The App is provided 'as is' and 'as available' without any warranties, express or implied. We do not guarantee that:" data-ru="Приложение предоставляется 'как есть' и 'как доступно' без каких-либо гарантий, явных или подразумеваемых. Мы не гарантируем, что:">
+                        The App is provided "as is" and "as available" without any warranties, express or implied. We do not guarantee that:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Приложение будет работать без перерывов или ошибок</li>
-                        <li>Все дефекты будут исправлены</li>
-                        <li>Приложение будет соответствовать вашим требованиям</li>
-                        <li>Результаты использования будут точными или надежными</li>
+                        <li data-en="The App will operate without interruptions or errors" data-ru="Приложение будет работать без перерывов или ошибок">The App will operate without interruptions or errors</li>
+                        <li data-en="All defects will be corrected" data-ru="Все дефекты будут исправлены">All defects will be corrected</li>
+                        <li data-en="The App will meet your requirements" data-ru="Приложение будет соответствовать вашим требованиям">The App will meet your requirements</li>
+                        <li data-en="Results of use will be accurate or reliable" data-ru="Результаты использования будут точными или надежными">Results of use will be accurate or reliable</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">9. Ограничение ответственности</h2>
-                    <p class="text-gray-700 mb-4">
-                        В максимальной степени, разрешенной применимым законодательством, мы не несем ответственности за:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="9. Limitation of Liability" data-ru="9. Ограничение ответственности">9. Limitation of Liability</h2>
+                    <p class="text-gray-700 mb-4" data-en="To the maximum extent permitted by applicable law, we are not liable for:" data-ru="В максимальной степени, разрешенной применимым законодательством, мы не несем ответственности за:">
+                        To the maximum extent permitted by applicable law, we are not liable for:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Любые косвенные, случайные, специальные или штрафные убытки</li>
-                        <li>Потерю прибыли, данных или возможностей</li>
-                        <li>Прерывание работы или потерю использования</li>
-                        <li>Действия третьих лиц</li>
-                        <li>Несанкционированный доступ к вашим данным</li>
+                        <li data-en="Any indirect, incidental, special, or punitive damages" data-ru="Любые косвенные, случайные, специальные или штрафные убытки">Any indirect, incidental, special, or punitive damages</li>
+                        <li data-en="Loss of profits, data, or opportunities" data-ru="Потерю прибыли, данных или возможностей">Loss of profits, data, or opportunities</li>
+                        <li data-en="Interruption of work or loss of use" data-ru="Прерывание работы или потерю использования">Interruption of work or loss of use</li>
+                        <li data-en="Actions of third parties" data-ru="Действия третьих лиц">Actions of third parties</li>
+                        <li data-en="Unauthorized access to your data" data-ru="Несанкционированный доступ к вашим данным">Unauthorized access to your data</li>
                     </ul>
-                    <p class="text-gray-700 mt-4">
-                        Наша совокупная ответственность не превысит сумму, уплаченную вами за использование
-                        Приложения в течение 12 месяцев, предшествующих претензии.
+                    <p class="text-gray-700 mt-4" data-en="Our aggregate liability shall not exceed the amount paid by you for using the App during the 12 months preceding the claim." data-ru="Наша совокупная ответственность не превысит сумму, уплаченную вами за использование Приложения в течение 12 месяцев, предшествующих претензии.">
+                        Our aggregate liability shall not exceed the amount paid by you for using the App during the 12 months preceding the claim.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">10. Возмещение убытков</h2>
-                    <p class="text-gray-700">
-                        Вы соглашаетесь защищать, возмещать убытки и ограждать нас от любых претензий, обязательств,
-                        убытков, потерь и расходов, возникающих в результате вашего нарушения настоящего Соглашения
-                        или использования Приложения.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="10. Indemnification" data-ru="10. Возмещение убытков">10. Indemnification</h2>
+                    <p class="text-gray-700" data-en="You agree to defend, indemnify, and hold us harmless from any claims, liabilities, damages, losses, and expenses arising from your violation of this Agreement or use of the App." data-ru="Вы соглашаетесь защищать, возмещать убытки и ограждать нас от любых претензий, обязательств, убытков, потерь и расходов, возникающих в результате вашего нарушения настоящего Соглашения или использования Приложения.">
+                        You agree to defend, indemnify, and hold us harmless from any claims, liabilities, damages, losses, and expenses arising from your violation of this Agreement or use of the App.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">11. Прекращение</h2>
-                    <p class="text-gray-700 mb-4">
-                        Мы можем приостановить или прекратить ваш доступ к Приложению в любое время по любой причине,
-                        включая нарушение настоящего Соглашения, без предварительного уведомления.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="11. Termination" data-ru="11. Прекращение">11. Termination</h2>
+                    <p class="text-gray-700 mb-4" data-en="We may suspend or terminate your access to the App at any time for any reason, including violation of this Agreement, without prior notice." data-ru="Мы можем приостановить или прекратить ваш доступ к Приложению в любое время по любой причине, включая нарушение настоящего Соглашения, без предварительного уведомления.">
+                        We may suspend or terminate your access to the App at any time for any reason, including violation of this Agreement, without prior notice.
                     </p>
-                    <p class="text-gray-700">
-                        Вы можете прекратить использование Приложения в любое время, удалив его со своих устройств
-                        и закрыв учетную запись.
+                    <p class="text-gray-700" data-en="You may terminate use of the App at any time by deleting it from your devices and closing your account." data-ru="Вы можете прекратить использование Приложения в любое время, удалив его со своих устройств и закрыв учетную запись.">
+                        You may terminate use of the App at any time by deleting it from your devices and closing your account.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">12. Изменения в Соглашении</h2>
-                    <p class="text-gray-700 mb-4">
-                        Мы оставляем за собой право изменять настоящее Соглашение в любое время. Мы уведомим
-                        вас о существенных изменениях через Приложение или по электронной почте.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="12. Changes to Agreement" data-ru="12. Изменения в Соглашении">12. Changes to Agreement</h2>
+                    <p class="text-gray-700 mb-4" data-en="We reserve the right to modify this Agreement at any time. We will notify you of material changes through the App or by email." data-ru="Мы оставляем за собой право изменять настоящее Соглашение в любое время. Мы уведомим вас о существенных изменениях через Приложение или по электронной почте.">
+                        We reserve the right to modify this Agreement at any time. We will notify you of material changes through the App or by email.
                     </p>
-                    <p class="text-gray-700">
-                        Продолжение использования Приложения после внесения изменений означает ваше согласие
-                        с обновленным Соглашением.
+                    <p class="text-gray-700" data-en="Continued use of the App after changes means your agreement to the updated Agreement." data-ru="Продолжение использования Приложения после внесения изменений означает ваше согласие с обновленным Соглашением.">
+                        Continued use of the App after changes means your agreement to the updated Agreement.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">13. Применимое право</h2>
-                    <p class="text-gray-700">
-                        Настоящее Соглашение регулируется законодательством Российской Федерации без учета
-                        коллизионных норм. Любые споры подлежат рассмотрению в судах по месту нахождения компании.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="13. Governing Law" data-ru="13. Применимое право">13. Governing Law</h2>
+                    <p class="text-gray-700" data-en="This Agreement is governed by applicable law without regard to conflict of law provisions. Any disputes shall be resolved in the courts at the company's location." data-ru="Настоящее Соглашение регулируется законодательством Российской Федерации без учета коллизионных норм. Любые споры подлежат рассмотрению в судах по месту нахождения компании.">
+                        This Agreement is governed by applicable law without regard to conflict of law provisions. Any disputes shall be resolved in the courts at the company's location.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">14. Разрешение споров</h2>
-                    <p class="text-gray-700 mb-4">
-                        При возникновении споров мы рекомендуем сначала связаться с нами для попытки урегулирования
-                        вопроса в досудебном порядке.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="14. Dispute Resolution" data-ru="14. Разрешение споров">14. Dispute Resolution</h2>
+                    <p class="text-gray-700" data-en="In case of disputes, we recommend first contacting us to attempt pre-trial settlement." data-ru="При возникновении споров мы рекомендуем сначала связаться с нами для попытки урегулирования вопроса в досудебном порядке.">
+                        In case of disputes, we recommend first contacting us to attempt pre-trial settlement.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">15. Разделимость положений</h2>
-                    <p class="text-gray-700">
-                        Если какое-либо положение настоящего Соглашения будет признано недействительным или
-                        неисполнимым, остальные положения сохранят свою силу.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="15. Severability" data-ru="15. Разделимость положений">15. Severability</h2>
+                    <p class="text-gray-700" data-en="If any provision of this Agreement is found invalid or unenforceable, the remaining provisions shall remain in effect." data-ru="Если какое-либо положение настоящего Соглашения будет признано недействительным или неисполнимым, остальные положения сохранят свою силу.">
+                        If any provision of this Agreement is found invalid or unenforceable, the remaining provisions shall remain in effect.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">16. Полнота соглашения</h2>
-                    <p class="text-gray-700">
-                        Настоящее Соглашение и Политика конфиденциальности представляют собой полное соглашение
-                        между вами и нами относительно использования Приложения.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="16. Entire Agreement" data-ru="16. Полнота соглашения">16. Entire Agreement</h2>
+                    <p class="text-gray-700" data-en="This Agreement and the Privacy Policy constitute the entire agreement between you and us regarding use of the App." data-ru="Настоящее Соглашение и Политика конфиденциальности представляют собой полное соглашение между вами и нами относительно использования Приложения.">
+                        This Agreement and the Privacy Policy constitute the entire agreement between you and us regarding use of the App.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">17. Контактная информация</h2>
-                    <p class="text-gray-700 mb-4">
-                        Если у вас есть вопросы о настоящем Соглашении, пожалуйста, свяжитесь с нами:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="17. Contact Information" data-ru="17. Контактная информация">17. Contact Information</h2>
+                    <p class="text-gray-700 mb-4" data-en="If you have questions about this Agreement, please contact us:" data-ru="Если у вас есть вопросы о настоящем Соглашении, пожалуйста, свяжитесь с нами:">
+                        If you have questions about this Agreement, please contact us:
                     </p>
                     <div class="bg-gray-50 p-6 rounded-lg">
                         <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:legal@calendarity.app" class="text-purple-600 hover:underline">legal@calendarity.app</a></p>
-                        <p class="text-gray-700 mt-2"><strong>Поддержка:</strong> <a href="mailto:support@calendarity.app" class="text-purple-600 hover:underline">support@calendarity.app</a></p>
+                        <p class="text-gray-700 mt-2"><strong data-en="Support:" data-ru="Поддержка:">Support:</strong> <a href="mailto:support@calendarity.app" class="text-purple-600 hover:underline">support@calendarity.app</a></p>
                     </div>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">18. Принятие условий</h2>
-                    <p class="text-gray-700">
-                        Используя Приложение Calendarity, вы подтверждаете, что прочитали, поняли и согласны
-                        соблюдать настоящее Пользовательское соглашение.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="18. Acceptance of Terms" data-ru="18. Принятие условий">18. Acceptance of Terms</h2>
+                    <p class="text-gray-700" data-en="By using the Calendarity App, you confirm that you have read, understood, and agree to comply with this Terms of Service Agreement." data-ru="Используя Приложение Calendarity, вы подтверждаете, что прочитали, поняли и согласны соблюдать настоящее Пользовательское соглашение.">
+                        By using the Calendarity App, you confirm that you have read, understood, and agree to comply with this Terms of Service Agreement.
                     </p>
                 </section>
             </div>
@@ -309,42 +290,70 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
-                    Вернуться на главную
+                    <span data-en="Back to Home" data-ru="Вернуться на главную">Back to Home</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Футер -->
     <footer class="bg-gradient-to-r from-gray-900 to-purple-900 text-white py-12 px-4 mt-16">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Calendarity</h3>
-                    <p class="text-gray-400">
-                        Современное приложение для управления временем
-                    </p>
+                    <p class="text-gray-400" data-en="Modern time management app" data-ru="Современное приложение для управления временем">Modern time management app</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Продукт</h4>
+                    <h4 class="font-semibold mb-4" data-en="Product" data-ru="Продукт">Product</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html#features" class="hover:text-white transition">Возможности</a></li>
-                        <li><a href="index.html#about" class="hover:text-white transition">О приложении</a></li>
-                        <li><a href="index.html#download" class="hover:text-white transition">Скачать</a></li>
+                        <li><a href="index.html#features" class="hover:text-white transition" data-en="Features" data-ru="Возможности">Features</a></li>
+                        <li><a href="index.html#about" class="hover:text-white transition" data-en="About" data-ru="О приложении">About</a></li>
+                        <li><a href="index.html#download" class="hover:text-white transition" data-en="Download" data-ru="Скачать">Download</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Юридическая информация</h4>
+                    <h4 class="font-semibold mb-4" data-en="Legal" data-ru="Юридическая информация">Legal</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="privacy.html" class="hover:text-white transition">Политика конфиденциальности</a></li>
-                        <li><a href="terms.html" class="text-white">Пользовательское соглашение</a></li>
+                        <li><a href="privacy.html" class="hover:text-white transition" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-white" data-en="Terms of Service" data-ru="Пользовательское соглашение">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Calendarity. Все права защищены.</p>
+                <p data-en="&copy; 2025 Calendarity. All rights reserved." data-ru="&copy; 2025 Calendarity. Все права защищены.">&copy; 2025 Calendarity. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('lang-en-mobile').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru-mobile').classList.toggle('active', lang === 'ru');
+
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.innerHTML = text;
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+        });
+    </script>
 </body>
 </html>

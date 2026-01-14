@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Политика конфиденциальности Calendarity">
-    <title>Политика конфиденциальности - Calendarity</title>
+    <meta name="description" content="Privacy Policy - Calendarity">
+    <title>Privacy Policy - Calendarity</title>
 
-    <!-- Favicon для разных браузеров и устройств -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
@@ -16,221 +15,212 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Glassmorphism эффект */
+        body { font-family: 'Inter', sans-serif; }
         .glass-nav {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         .glass-content {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
         }
-
         .fade-in {
             animation: fadeIn 0.8s ease-in;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .lang-btn { transition: all 0.3s ease; }
+        .lang-btn.active {
+            background: linear-gradient(to right, #9333ea, #db2777);
+            color: white;
+        }
+        .lang-btn:not(.active) {
+            background: rgba(255, 255, 255, 0.5);
+            color: #6b7280;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
-    <!-- Навигация -->
     <nav class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Calendarity</a>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition font-medium">Главная</a>
-                    <a href="privacy.html" class="text-purple-600 font-bold">Конфиденциальность</a>
-                    <a href="terms.html" class="text-gray-700 hover:text-purple-600 transition font-medium">Соглашение</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Home" data-ru="Главная">Home</a>
+                    <a href="privacy.html" class="text-purple-600 font-bold" data-en="Privacy" data-ru="Конфиденциальность">Privacy</a>
+                    <a href="terms.html" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Terms" data-ru="Соглашение">Terms</a>
+                    <div class="flex rounded-lg overflow-hidden border border-gray-200">
+                        <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en">EN</button>
+                        <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru">RU</button>
+                    </div>
+                </div>
+                <div class="md:hidden flex rounded-lg overflow-hidden border border-gray-200">
+                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en-mobile">EN</button>
+                    <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru-mobile">RU</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Контент -->
     <div class="max-w-4xl mx-auto px-4 py-12 pt-24">
         <div class="glass-content rounded-3xl shadow-2xl p-8 md:p-12 fade-in">
-            <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Политика конфиденциальности</h1>
-            <p class="text-gray-600 mb-8">Последнее обновление: 8 ноября 2025 года</p>
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</h1>
+            <p class="text-gray-600 mb-8" data-en="Last updated: November 8, 2025" data-ru="Последнее обновление: 8 ноября 2025 года">Last updated: November 8, 2025</p>
 
             <div class="prose prose-lg max-w-none">
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Введение</h2>
-                    <p class="text-gray-700 mb-4">
-                        Добро пожаловать в Calendarity. Мы уважаем вашу конфиденциальность и стремимся защитить ваши персональные данные.
-                        Настоящая Политика конфиденциальности разъясняет, как мы собираем, используем, храним и защищаем вашу информацию
-                        при использовании нашего мобильного приложения.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="1. Introduction" data-ru="1. Введение">1. Introduction</h2>
+                    <p class="text-gray-700 mb-4" data-en="Welcome to Calendarity. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you use our mobile application." data-ru="Добро пожаловать в Calendarity. Мы уважаем вашу конфиденциальность и стремимся защитить ваши персональные данные. Настоящая Политика конфиденциальности разъясняет, как мы собираем, используем, храним и защищаем вашу информацию при использовании нашего мобильного приложения.">
+                        Welcome to Calendarity. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you use our mobile application.
                     </p>
-                    <p class="text-gray-700">
-                        Используя приложение Calendarity, вы соглашаетесь со сбором и использованием информации в соответствии
-                        с настоящей политикой.
+                    <p class="text-gray-700" data-en="By using the Calendarity app, you agree to the collection and use of information in accordance with this policy." data-ru="Используя приложение Calendarity, вы соглашаетесь со сбором и использованием информации в соответствии с настоящей политикой.">
+                        By using the Calendarity app, you agree to the collection and use of information in accordance with this policy.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">2. Информация, которую мы собираем</h2>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="2. Information We Collect" data-ru="2. Информация, которую мы собираем">2. Information We Collect</h2>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">2.1. Информация, которую вы предоставляете</h3>
-                    <p class="text-gray-700 mb-3">Мы можем собирать следующую информацию:</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="2.1. Information You Provide" data-ru="2.1. Информация, которую вы предоставляете">2.1. Information You Provide</h3>
+                    <p class="text-gray-700 mb-3" data-en="We may collect the following information:" data-ru="Мы можем собирать следующую информацию:">We may collect the following information:</p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                        <li>Имя пользователя и адрес электронной почты при регистрации</li>
-                        <li>Данные календаря, события и напоминания, которые вы создаете</li>
-                        <li>Заметки и задачи, добавленные в приложение</li>
-                        <li>Настройки и предпочтения приложения</li>
+                        <li data-en="Username and email address during registration" data-ru="Имя пользователя и адрес электронной почты при регистрации">Username and email address during registration</li>
+                        <li data-en="Calendar data, events, and reminders you create" data-ru="Данные календаря, события и напоминания, которые вы создаете">Calendar data, events, and reminders you create</li>
+                        <li data-en="Notes and tasks added to the app" data-ru="Заметки и задачи, добавленные в приложение">Notes and tasks added to the app</li>
+                        <li data-en="App settings and preferences" data-ru="Настройки и предпочтения приложения">App settings and preferences</li>
                     </ul>
 
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">2.2. Автоматически собираемая информация</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6" data-en="2.2. Automatically Collected Information" data-ru="2.2. Автоматически собираемая информация">2.2. Automatically Collected Information</h3>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-                        <li>Информация об устройстве (модель, операционная система, уникальные идентификаторы)</li>
-                        <li>Данные об использовании приложения и взаимодействии с функциями</li>
-                        <li>IP-адрес и информация о подключении</li>
-                        <li>Данные о сбоях и производительности приложения</li>
+                        <li data-en="Device information (model, operating system, unique identifiers)" data-ru="Информация об устройстве (модель, операционная система, уникальные идентификаторы)">Device information (model, operating system, unique identifiers)</li>
+                        <li data-en="App usage data and feature interactions" data-ru="Данные об использовании приложения и взаимодействии с функциями">App usage data and feature interactions</li>
+                        <li data-en="IP address and connection information" data-ru="IP-адрес и информация о подключении">IP address and connection information</li>
+                        <li data-en="Crash data and app performance metrics" data-ru="Данные о сбоях и производительности приложения">Crash data and app performance metrics</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. Как мы используем вашу информацию</h2>
-                    <p class="text-gray-700 mb-3">Мы используем собранную информацию для:</p>
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="3. How We Use Your Information" data-ru="3. Как мы используем вашу информацию">3. How We Use Your Information</h2>
+                    <p class="text-gray-700 mb-3" data-en="We use the collected information to:" data-ru="Мы используем собранную информацию для:">We use the collected information to:</p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Предоставления и поддержки функциональности приложения</li>
-                        <li>Синхронизации ваших данных между устройствами</li>
-                        <li>Отправки уведомлений и напоминаний</li>
-                        <li>Улучшения и персонализации работы приложения</li>
-                        <li>Анализа использования для улучшения наших сервисов</li>
-                        <li>Обеспечения безопасности и предотвращения мошенничества</li>
-                        <li>Технической поддержки пользователей</li>
-                        <li>Соблюдения законодательных требований</li>
+                        <li data-en="Provide and maintain app functionality" data-ru="Предоставления и поддержки функциональности приложения">Provide and maintain app functionality</li>
+                        <li data-en="Sync your data across devices" data-ru="Синхронизации ваших данных между устройствами">Sync your data across devices</li>
+                        <li data-en="Send notifications and reminders" data-ru="Отправки уведомлений и напоминаний">Send notifications and reminders</li>
+                        <li data-en="Improve and personalize app experience" data-ru="Улучшения и персонализации работы приложения">Improve and personalize app experience</li>
+                        <li data-en="Analyze usage to improve our services" data-ru="Анализа использования для улучшения наших сервисов">Analyze usage to improve our services</li>
+                        <li data-en="Ensure security and prevent fraud" data-ru="Обеспечения безопасности и предотвращения мошенничества">Ensure security and prevent fraud</li>
+                        <li data-en="Provide technical support" data-ru="Технической поддержки пользователей">Provide technical support</li>
+                        <li data-en="Comply with legal requirements" data-ru="Соблюдения законодательных требований">Comply with legal requirements</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">4. Хранение данных</h2>
-                    <p class="text-gray-700 mb-4">
-                        Ваши данные хранятся на защищенных серверах с использованием современных методов шифрования.
-                        Мы применяем следующие меры безопасности:
-                    </p>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Шифрование данных при передаче (SSL/TLS)</li>
-                        <li>Шифрование данных при хранении</li>
-                        <li>Регулярные проверки безопасности</li>
-                        <li>Ограниченный доступ к персональным данным</li>
-                        <li>Резервное копирование для предотвращения потери данных</li>
-                    </ul>
-                </section>
-
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">5. Передача данных третьим лицам</h2>
-                    <p class="text-gray-700 mb-4">
-                        Мы не продаем и не сдаем в аренду ваши персональные данные третьим лицам. Мы можем передавать
-                        данные только в следующих случаях:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="4. Data Storage" data-ru="4. Хранение данных">4. Data Storage</h2>
+                    <p class="text-gray-700 mb-4" data-en="Your data is stored on secure servers using modern encryption methods. We implement the following security measures:" data-ru="Ваши данные хранятся на защищенных серверах с использованием современных методов шифрования. Мы применяем следующие меры безопасности:">
+                        Your data is stored on secure servers using modern encryption methods. We implement the following security measures:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li><strong>Поставщикам услуг:</strong> которые помогают нам в работе приложения (хостинг, аналитика)</li>
-                        <li><strong>По требованию закона:</strong> если это необходимо для соблюдения законодательства</li>
-                        <li><strong>С вашего согласия:</strong> в других случаях только с вашего явного разрешения</li>
+                        <li data-en="Data encryption in transit (SSL/TLS)" data-ru="Шифрование данных при передаче (SSL/TLS)">Data encryption in transit (SSL/TLS)</li>
+                        <li data-en="Data encryption at rest" data-ru="Шифрование данных при хранении">Data encryption at rest</li>
+                        <li data-en="Regular security audits" data-ru="Регулярные проверки безопасности">Regular security audits</li>
+                        <li data-en="Limited access to personal data" data-ru="Ограниченный доступ к персональным данным">Limited access to personal data</li>
+                        <li data-en="Backup to prevent data loss" data-ru="Резервное копирование для предотвращения потери данных">Backup to prevent data loss</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">6. Ваши права</h2>
-                    <p class="text-gray-700 mb-3">Вы имеете следующие права в отношении ваших данных:</p>
-                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li><strong>Доступ:</strong> запросить копию ваших персональных данных</li>
-                        <li><strong>Исправление:</strong> исправить неточные или неполные данные</li>
-                        <li><strong>Удаление:</strong> запросить удаление ваших персональных данных</li>
-                        <li><strong>Экспорт:</strong> получить ваши данные в структурированном формате</li>
-                        <li><strong>Отзыв согласия:</strong> отозвать согласие на обработку данных в любое время</li>
-                        <li><strong>Возражение:</strong> возразить против определенных видов обработки</li>
-                    </ul>
-                </section>
-
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">7. Cookies и аналитика</h2>
-                    <p class="text-gray-700 mb-4">
-                        Приложение может использовать технологии, подобные cookies, для улучшения пользовательского опыта
-                        и сбора аналитических данных. Мы используем:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="5. Third-Party Data Sharing" data-ru="5. Передача данных третьим лицам">5. Third-Party Data Sharing</h2>
+                    <p class="text-gray-700 mb-4" data-en="We do not sell or rent your personal data to third parties. We may share data only in the following cases:" data-ru="Мы не продаем и не сдаем в аренду ваши персональные данные третьим лицам. Мы можем передавать данные только в следующих случаях:">
+                        We do not sell or rent your personal data to third parties. We may share data only in the following cases:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">
-                        <li>Сервисы аналитики для понимания использования приложения</li>
-                        <li>Инструменты отслеживания ошибок для улучшения стабильности</li>
-                        <li>Технологии для персонализации контента</li>
+                        <li><strong data-en="Service Providers:" data-ru="Поставщикам услуг:">Service Providers:</strong> <span data-en="who help us operate the app (hosting, analytics)" data-ru="которые помогают нам в работе приложения (хостинг, аналитика)">who help us operate the app (hosting, analytics)</span></li>
+                        <li><strong data-en="Legal Requirements:" data-ru="По требованию закона:">Legal Requirements:</strong> <span data-en="if required to comply with legislation" data-ru="если это необходимо для соблюдения законодательства">if required to comply with legislation</span></li>
+                        <li><strong data-en="With Your Consent:" data-ru="С вашего согласия:">With Your Consent:</strong> <span data-en="in other cases only with your explicit permission" data-ru="в других случаях только с вашего явного разрешения">in other cases only with your explicit permission</span></li>
                     </ul>
-                    <p class="text-gray-700 mt-4">
-                        Вы можете управлять настройками аналитики в разделе настроек приложения.
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="6. Your Rights" data-ru="6. Ваши права">6. Your Rights</h2>
+                    <p class="text-gray-700 mb-3" data-en="You have the following rights regarding your data:" data-ru="Вы имеете следующие права в отношении ваших данных:">You have the following rights regarding your data:</p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li><strong data-en="Access:" data-ru="Доступ:">Access:</strong> <span data-en="request a copy of your personal data" data-ru="запросить копию ваших персональных данных">request a copy of your personal data</span></li>
+                        <li><strong data-en="Correction:" data-ru="Исправление:">Correction:</strong> <span data-en="correct inaccurate or incomplete data" data-ru="исправить неточные или неполные данные">correct inaccurate or incomplete data</span></li>
+                        <li><strong data-en="Deletion:" data-ru="Удаление:">Deletion:</strong> <span data-en="request deletion of your personal data" data-ru="запросить удаление ваших персональных данных">request deletion of your personal data</span></li>
+                        <li><strong data-en="Export:" data-ru="Экспорт:">Export:</strong> <span data-en="receive your data in a structured format" data-ru="получить ваши данные в структурированном формате">receive your data in a structured format</span></li>
+                        <li><strong data-en="Withdraw Consent:" data-ru="Отзыв согласия:">Withdraw Consent:</strong> <span data-en="withdraw consent to data processing at any time" data-ru="отозвать согласие на обработку данных в любое время">withdraw consent to data processing at any time</span></li>
+                        <li><strong data-en="Object:" data-ru="Возражение:">Object:</strong> <span data-en="object to certain types of processing" data-ru="возразить против определенных видов обработки">object to certain types of processing</span></li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="7. Cookies and Analytics" data-ru="7. Cookies и аналитика">7. Cookies and Analytics</h2>
+                    <p class="text-gray-700 mb-4" data-en="The app may use cookie-like technologies to improve user experience and collect analytics data. We use:" data-ru="Приложение может использовать технологии, подобные cookies, для улучшения пользовательского опыта и сбора аналитических данных. Мы используем:">
+                        The app may use cookie-like technologies to improve user experience and collect analytics data. We use:
+                    </p>
+                    <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                        <li data-en="Analytics services to understand app usage" data-ru="Сервисы аналитики для понимания использования приложения">Analytics services to understand app usage</li>
+                        <li data-en="Error tracking tools to improve stability" data-ru="Инструменты отслеживания ошибок для улучшения стабильности">Error tracking tools to improve stability</li>
+                        <li data-en="Technologies for content personalization" data-ru="Технологии для персонализации контента">Technologies for content personalization</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4" data-en="You can manage analytics settings in the app settings section." data-ru="Вы можете управлять настройками аналитики в разделе настроек приложения.">
+                        You can manage analytics settings in the app settings section.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">8. Данные детей</h2>
-                    <p class="text-gray-700">
-                        Наше приложение не предназначено для детей младше 13 лет. Мы сознательно не собираем
-                        персональную информацию от детей младше 13 лет. Если вы являетесь родителем или опекуном
-                        и знаете, что ваш ребенок предоставил нам персональные данные, пожалуйста, свяжитесь с нами.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="8. Children's Data" data-ru="8. Данные детей">8. Children's Data</h2>
+                    <p class="text-gray-700" data-en="Our app is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and know that your child has provided us with personal data, please contact us." data-ru="Наше приложение не предназначено для детей младше 13 лет. Мы сознательно не собираем персональную информацию от детей младше 13 лет. Если вы являетесь родителем или опекуном и знаете, что ваш ребенок предоставил нам персональные данные, пожалуйста, свяжитесь с нами.">
+                        Our app is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and know that your child has provided us with personal data, please contact us.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">9. Международная передача данных</h2>
-                    <p class="text-gray-700">
-                        Ваши данные могут обрабатываться на серверах, расположенных в разных странах.
-                        Мы обеспечиваем, чтобы такая передача осуществлялась в соответствии с применимыми
-                        законами о защите данных и с использованием соответствующих гарантий безопасности.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="9. International Data Transfers" data-ru="9. Международная передача данных">9. International Data Transfers</h2>
+                    <p class="text-gray-700" data-en="Your data may be processed on servers located in different countries. We ensure that such transfers are carried out in accordance with applicable data protection laws and with appropriate security safeguards." data-ru="Ваши данные могут обрабатываться на серверах, расположенных в разных странах. Мы обеспечиваем, чтобы такая передача осуществлялась в соответствии с применимыми законами о защите данных и с использованием соответствующих гарантий безопасности.">
+                        Your data may be processed on servers located in different countries. We ensure that such transfers are carried out in accordance with applicable data protection laws and with appropriate security safeguards.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">10. Срок хранения данных</h2>
-                    <p class="text-gray-700">
-                        Мы храним ваши персональные данные только в течение времени, необходимого для целей,
-                        указанных в настоящей Политике конфиденциальности, или в соответствии с требованиями
-                        законодательства. После удаления учетной записи ваши данные будут удалены в течение 30 дней.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="10. Data Retention Period" data-ru="10. Срок хранения данных">10. Data Retention Period</h2>
+                    <p class="text-gray-700" data-en="We retain your personal data only for as long as necessary for the purposes set out in this Privacy Policy, or as required by law. After account deletion, your data will be deleted within 30 days." data-ru="Мы храним ваши персональные данные только в течение времени, необходимого для целей, указанных в настоящей Политике конфиденциальности, или в соответствии с требованиями законодательства. После удаления учетной записи ваши данные будут удалены в течение 30 дней.">
+                        We retain your personal data only for as long as necessary for the purposes set out in this Privacy Policy, or as required by law. After account deletion, your data will be deleted within 30 days.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">11. Изменения в Политике конфиденциальности</h2>
-                    <p class="text-gray-700 mb-4">
-                        Мы можем периодически обновлять нашу Политику конфиденциальности. Мы уведомим вас о любых
-                        изменениях, опубликовав новую Политику конфиденциальности на этой странице и обновив дату
-                        "Последнее обновление" вверху документа.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="11. Changes to Privacy Policy" data-ru="11. Изменения в Политике конфиденциальности">11. Changes to Privacy Policy</h2>
+                    <p class="text-gray-700 mb-4" data-en="We may periodically update our Privacy Policy. We will notify you of any changes by posting the new Privacy Policy on this page and updating the 'Last updated' date at the top." data-ru="Мы можем периодически обновлять нашу Политику конфиденциальности. Мы уведомим вас о любых изменениях, опубликовав новую Политику конфиденциальности на этой странице и обновив дату 'Последнее обновление' вверху документа.">
+                        We may periodically update our Privacy Policy. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top.
                     </p>
-                    <p class="text-gray-700">
-                        Рекомендуем периодически просматривать эту Политику конфиденциальности для получения
-                        информации об изменениях. Изменения вступают в силу с момента их публикации на этой странице.
+                    <p class="text-gray-700" data-en="We recommend periodically reviewing this Privacy Policy for updates. Changes become effective upon posting on this page." data-ru="Рекомендуем периодически просматривать эту Политику конфиденциальности для получения информации об изменениях. Изменения вступают в силу с момента их публикации на этой странице.">
+                        We recommend periodically reviewing this Privacy Policy for updates. Changes become effective upon posting on this page.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">12. Контактная информация</h2>
-                    <p class="text-gray-700 mb-4">
-                        Если у вас есть вопросы о настоящей Политике конфиденциальности или вы хотите воспользоваться
-                        своими правами, пожалуйста, свяжитесь с нами:
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="12. Contact Information" data-ru="12. Контактная информация">12. Contact Information</h2>
+                    <p class="text-gray-700 mb-4" data-en="If you have questions about this Privacy Policy or want to exercise your rights, please contact us:" data-ru="Если у вас есть вопросы о настоящей Политике конфиденциальности или вы хотите воспользоваться своими правами, пожалуйста, свяжитесь с нами:">
+                        If you have questions about this Privacy Policy or want to exercise your rights, please contact us:
                     </p>
                     <div class="bg-gray-50 p-6 rounded-lg">
                         <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:privacy@calendarity.app" class="text-purple-600 hover:underline">privacy@calendarity.app</a></p>
-                        <p class="text-gray-700 mt-2"><strong>Поддержка:</strong> <a href="mailto:support@calendarity.app" class="text-purple-600 hover:underline">support@calendarity.app</a></p>
+                        <p class="text-gray-700 mt-2"><strong data-en="Support:" data-ru="Поддержка:">Support:</strong> <a href="mailto:support@calendarity.app" class="text-purple-600 hover:underline">support@calendarity.app</a></p>
                     </div>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-4">13. Согласие</h2>
-                    <p class="text-gray-700">
-                        Используя наше приложение, вы соглашаетесь с настоящей Политикой конфиденциальности и
-                        обработкой ваших данных в соответствии с условиями, изложенными в этом документе.
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-4" data-en="13. Consent" data-ru="13. Согласие">13. Consent</h2>
+                    <p class="text-gray-700" data-en="By using our app, you agree to this Privacy Policy and the processing of your data in accordance with the terms set out in this document." data-ru="Используя наше приложение, вы соглашаетесь с настоящей Политикой конфиденциальности и обработкой ваших данных в соответствии с условиями, изложенными в этом документе.">
+                        By using our app, you agree to this Privacy Policy and the processing of your data in accordance with the terms set out in this document.
                     </p>
                 </section>
             </div>
@@ -240,42 +230,70 @@
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
-                    Вернуться на главную
+                    <span data-en="Back to Home" data-ru="Вернуться на главную">Back to Home</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Футер -->
     <footer class="bg-gradient-to-r from-gray-900 to-purple-900 text-white py-12 px-4 mt-16">
         <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Calendarity</h3>
-                    <p class="text-gray-400">
-                        Современное приложение для управления временем
-                    </p>
+                    <p class="text-gray-400" data-en="Modern time management app" data-ru="Современное приложение для управления временем">Modern time management app</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Продукт</h4>
+                    <h4 class="font-semibold mb-4" data-en="Product" data-ru="Продукт">Product</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html#features" class="hover:text-white transition">Возможности</a></li>
-                        <li><a href="index.html#about" class="hover:text-white transition">О приложении</a></li>
-                        <li><a href="index.html#download" class="hover:text-white transition">Скачать</a></li>
+                        <li><a href="index.html#features" class="hover:text-white transition" data-en="Features" data-ru="Возможности">Features</a></li>
+                        <li><a href="index.html#about" class="hover:text-white transition" data-en="About" data-ru="О приложении">About</a></li>
+                        <li><a href="index.html#download" class="hover:text-white transition" data-en="Download" data-ru="Скачать">Download</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Юридическая информация</h4>
+                    <h4 class="font-semibold mb-4" data-en="Legal" data-ru="Юридическая информация">Legal</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="privacy.html" class="text-white">Политика конфиденциальности</a></li>
-                        <li><a href="terms.html" class="hover:text-white transition">Пользовательское соглашение</a></li>
+                        <li><a href="privacy.html" class="text-white" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition" data-en="Terms of Service" data-ru="Пользовательское соглашение">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Calendarity. Все права защищены.</p>
+                <p data-en="&copy; 2025 Calendarity. All rights reserved." data-ru="&copy; 2025 Calendarity. Все права защищены.">&copy; 2025 Calendarity. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+            document.getElementById('lang-en-mobile').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ru-mobile').classList.toggle('active', lang === 'ru');
+
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.innerHTML = text;
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+        });
+    </script>
 </body>
 </html>
