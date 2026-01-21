@@ -274,16 +274,20 @@
                     <a href="#features" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Features" data-ru="Возможности">Features</a>
                     <a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="About" data-ru="О приложении">About</a>
                     <a href="#download" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Download" data-ru="Скачать">Download</a>
+                    <a href="mailto:developerwanttest@gmail.com" class="text-gray-700 hover:text-purple-600 transition font-medium" data-en="Contact Us" data-ru="Связаться с нами">Contact Us</a>
                     <!-- Language Switcher -->
                     <div class="flex rounded-lg overflow-hidden border border-gray-200">
                         <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en">EN</button>
                         <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru">RU</button>
                     </div>
                 </div>
-                <!-- Mobile Language Switcher -->
-                <div class="md:hidden flex rounded-lg overflow-hidden border border-gray-200">
-                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en-mobile">EN</button>
-                    <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru-mobile">RU</button>
+                <!-- Mobile Contact & Language Switcher -->
+                <div class="md:hidden flex items-center space-x-3">
+                    <a href="mailto:developerwanttest@gmail.com" class="text-purple-600 hover:text-purple-700 transition font-medium text-sm" data-en="Contact" data-ru="Контакты">Contact</a>
+                    <div class="flex rounded-lg overflow-hidden border border-gray-200">
+                        <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 text-sm font-medium active" id="lang-en-mobile">EN</button>
+                        <button onclick="setLanguage('ru')" class="lang-btn px-3 py-1 text-sm font-medium" id="lang-ru-mobile">RU</button>
+                    </div>
                 </div>
             </div>
         </div>
