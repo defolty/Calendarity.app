@@ -7,7 +7,7 @@ bidmachine.io,1,DIRECT
 bidmachine.io,466,DIRECT
 
 #AdMob
-google.com, ca-app-pub-3860975619236513~8706127541, DIRECT, f08c47fec0942fa0
+google.com, pub-3860975619236513, DIRECT, f08c47fec0942fa0
 
 #Meta-Audience
 #Replace the Business_ID below with your Meta Business ID
