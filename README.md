@@ -49,14 +49,8 @@ npx serve
 
 ## 📝 Лицензия
 
-© 2025 Calendarity. Все права защищены.
+© 2026 Calendarity. Все права защищены.
 
 ## 📧 Контакты
 
 - Email: support@calendarity.app
-- Privacy: privacy@calendarity.app
-- Legal: legal@calendarity.app
-
-## 🤝 Вклад в проект
-
-Если вы хотите внести изменения в сайт, пожалуйста, создайте issue или pull request.
